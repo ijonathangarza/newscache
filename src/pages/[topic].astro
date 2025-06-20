@@ -1,0 +1,20 @@
+---
+export async function getStaticPaths() {
+  return {
+    paths: [], // No static pages at build time
+    fallback: 'blocking' // Generate on first request
+  };
+}
+
+const { topic } = Astro.params;
+---
+
+<html>
+  <head>
+    <title>{topic} | NewsCache</title>
+  </head>
+  <body>
+    <h1>Dynamic Topic: {topic}</h1>
+    <p>This page was generated on-demand!</p>
+  </body>
+</html>
